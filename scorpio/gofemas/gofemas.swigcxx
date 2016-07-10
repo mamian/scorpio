@@ -7,8 +7,7 @@
 %module(directors="1") gofemas
 
 %init %{ 
-#include <stdio.h>
-//printf("Initialization gofemas done.\n");
+//printf("Initialization goctp done.\n");
 %}
 
 /* 在复杂的企业环境中，可能有一些 C/C++ 头文件定义了您希望向脚本框架公开的全局变量和常量。
@@ -23,9 +22,11 @@
 
 /* Parse the header files to generate wrappers */
 %include "std_string.i"
-%include "gofemas.h"
 
-%feature("director") CUstpFtdcMdSpi;
-%feature("director") CUstpFtdcMdApi;
-%feature("director") CUstpFtdcTraderSpi;
-%feature("director") CUstpFtdcTraderApi;
+%feature("director");
+
+%include "gofemas.h"
+%include "../../deps/FemasAPI_V2.00/FemasNewMarker2.00.00API/include/USTPFtdcUserApiDataType.h"
+%include "../../deps/FemasAPI_V2.00/FemasNewMarker2.00.00API/include/USTPFtdcUserApiStruct.h"
+%include "../../deps/FemasAPI_V2.00/FemasNewMarker2.00.00API/include/USTPFtdcMduserApi.h"
+%include "../../deps/FemasAPI_V2.00/FemasNewMarker2.00.00API/include/USTPFtdcTraderApi.h"

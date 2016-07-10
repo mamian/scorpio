@@ -8,8 +8,3 @@
 #include <string>
 #include "gofemas.h"
 
-// std::string Caller::call() {
-// 	if (callback_ != 0)
-// 		return callback_->run();
-// 	return "";
-// }

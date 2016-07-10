@@ -155,13 +155,15 @@ public:
 	///@param ppInstrumentID 合约ID  
 	///@param nCount 要订阅/退订行情的合约个数
 	///@remark 
-	virtual int SubMarketData(char *ppInstrumentID[], int nCount)=0;
+	//virtual int SubMarketData(char *ppInstrumentID[], int nCount)=0;
+	virtual int SubMarketData(char **ppInstrumentID, int nCount)=0;
 
 	///退订合约行情。
 	///@param ppInstrumentID 合约ID  
 	///@param nCount 要订阅/退订行情的合约个数
 	///@remark 
-	virtual int UnSubMarketData(char *ppInstrumentID[], int nCount)=0;		
+	//virtual int UnSubMarketData(char *ppInstrumentID[], int nCount)=0;		
+	virtual int UnSubMarketData(char **ppInstrumentID, int nCount)=0;		
 	
 	///设置心跳超时时间。
 	///@param timeout 心跳超时时间(秒)  
