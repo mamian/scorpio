@@ -1,0 +1,31 @@
+/* Copyright 2011 The Go Authors.  All rights reserved.
+   Use of this source code is governed by a BSD-style
+   license that can be found in the LICENSE file.  */
+
+/* An example of writing a C++ virtual function in Go.  */
+
+%module(directors="1") gofemas
+
+%init %{ 
+#include <stdio.h>
+//printf("Initialization gofemas done.\n");
+%}
+
+/* 在复杂的企业环境中，可能有一些 C/C++ 头文件定义了您希望向脚本框架公开的全局变量和常量。
+ * 在接口文件中使用 %include <header.h> 和 %{ #include <header.h> %}，可解决在头文件中重复所有元素的声明的问题。
+ */
+
+/* Includes the header files in the wrapper code */
+%{
+#include <string>
+#include "gofemas.h"
+%}
+
+/* Parse the header files to generate wrappers */
+%include "std_string.i"
+%include "gofemas.h"
+
+%feature("director") CUstpFtdcMdSpi;
+%feature("director") CUstpFtdcMdApi;
+%feature("director") CUstpFtdcTraderSpi;
+%feature("director") CUstpFtdcTraderApi;
